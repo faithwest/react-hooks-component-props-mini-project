@@ -1,13 +1,21 @@
 import React from "react";
 import blogData from "../data/blog";
+import About from "./components/About";
+import Header from "./components/Header";
+import ArticleList from "./components/ArticleList"; // Import the ArticleList component
 
 console.log(blogData);
 
 function App() {
+  const blogName = "Overreacted";
+  const imageUrl = "./assets/logo.js";
+  const aboutText = "I explain with words and code.";
+
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      <Header blogName={blogName} /> {/* Remove quotes around {blogName} */}
+      <About imageUrl={imageUrl} aboutText={aboutText} />
+      <ArticleList posts={blogData.posts} /> {/* Render the ArticleList component */}
     </div>
   );
 }
