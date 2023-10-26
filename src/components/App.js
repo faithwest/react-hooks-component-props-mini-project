@@ -1,21 +1,31 @@
-import React from "react";
-import blogData from "../data/blog";
-import About from "./components/About";
-import Header from "./components/Header";
-import ArticleList from "./components/ArticleList"; // Import the ArticleList component
+import React from 'react';
+import Header from './Header';
+import About from './About';
+import ArticleList from './ArticleList';
 
-console.log(blogData);
+
+
 
 function App() {
   const blogName = "Overreacted";
   const imageUrl = "./assets/logo.js";
   const aboutText = "I explain with words and code.";
-
+  
+  //give the page some posts// add as many
+  const posts = [
+    {
+      id: 1,
+      title: "Article 1",
+      date: "January 1, 2023",
+      body: "This is the content of article 1",
+      
+    },
+  ];
   return (
     <div className="App">
-      <Header blogName={blogName} /> {/* Remove quotes around {blogName} */}
+      <Header blogName={blogName} /> 
       <About imageUrl={imageUrl} aboutText={aboutText} />
-      <ArticleList posts={blogData.posts} /> {/* Render the ArticleList component */}
+      <ArticleList posts={posts} /> 
     </div>
   );
 }
