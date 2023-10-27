@@ -1,22 +1,26 @@
-import React from "react";
+function makeEmojiList(minutes) {
+  const interval = minutes < 30 ? 5 : 10;
+  const emoji = minutes < 30 ? "☕️" : "🍱";
 
-function Article(props) {
-  const { title, date, body } = props;
-  const articles = [
-    {
-      title:"Components 101",
-      date:"December 15, 2020",
-      preview:"Setting up the building blocks of your site",
-    },
-  ];
+  let emojis = "";
+  for (let i = 0; i < minutes; i += interval) {
+    emojis += emoji;
+  }
+
+  return emojis;
+}
+
+function Article({ title, date = "January 1, 1970", preview, minutes }) {
+  const emojis = makeEmojiList(minutes);
+
   return (
-
     <article>
       <h3>{title}</h3>
-      <small>{date || "January 1, 1970"}</small> {/*<small>{date ? date : "January 1, 1970"}</small>*/}
-      <p>{body}</p>
+      <small>
+        {date} • {emojis} {minutes} min read
+      </small>
+      <p>{preview}</p>
     </article>
-
   );
 }
 

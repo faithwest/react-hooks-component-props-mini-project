@@ -1,13 +1,14 @@
 // Header.js
 import React from 'react';
 
-function Header(props) {
-  const { blogName } = props;
+function Header({name}) {
   
   return (
+    <div>
     <header>
-      <h1>{blogName}</h1>
+      <h1>{name}</h1>
     </header>
+    </div>
   );
 }
 

@@ -1,14 +1,10 @@
 import React from "react";
 
-function About(props) {
-  const { imageUrl, aboutText } = props;
-  const defaultImageUrl = "https://via.placeholder.com/215";
-  const altText = "blog logo";
-
+function About({ about, image = "https://via.placeholder.com/215" }) {
   return (
     <aside>
-      <img src={imageUrl || defaultImageUrl} alt={altText} />
-      <p>{aboutText}</p>
+      <img src={image} alt="blog logo" />
+      <p>{about}</p>
     </aside>
   );
 }
